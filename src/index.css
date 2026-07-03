@@ -1,0 +1,125 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@source "../components/**/*.tsx";
+@source "../hooks/**/*.ts";
+@source "../lib/**/*.ts";
+
+html,
+body {
+  font-family: var(--font-figtree), system-ui, sans-serif;
+  color: var(--text-primary);
+
+  overscroll-behavior-x: none;
+}
+
+.font-figtree {
+  font-family: var(--font-figtree), system-ui, sans-serif;
+}
+
+.font-roboto {
+  font-family: var(--font-roboto), system-ui, sans-serif;
+}
+
+@theme inline {
+  --color-main-primary: var(--main-primary);
+  --color-main-secondary: var(--main-secondary);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+
+  --color-background-primary: var(--background-primary);
+  --color-background-secondary: var(--background-secondary);
+  --color-background-tertiary: var(--background-tertiary);
+
+  --color-container-main: var(--container-main);
+  --color-divider-main: var(--divider-main);
+
+  --color-error-main: var(--error-main);
+  --color-success-main: var(--success-main);
+  --color-pending-main: var(--pending-main);
+  --color-processing-main: var(--processing-main);
+
+  --shadow-primary: var(--shadow-primary);
+  --color-bg-dark-card: #0F1017;
+}
+
+:root {
+  --main-primary: #1D1E2B;
+  --main-secondary: #FF5F02;
+
+  --text-primary: #0E0E0E;
+  --text-secondary: #737373;
+  --text-tertiary: #d9d9d9;
+
+  --background-primary: #F5FBFF;
+  --background-secondary: #f5f8ff;
+  --background-tertiary: #fff6f0;
+
+  --container-main: #FBFBFB;
+  --divider-main: #F3F3F5;
+
+  --error-main: #D11C00;
+  --success-main: #00a600;
+  --pending-main: #D8B100;
+  --processing-main: #0069A6;
+
+  --shadow-primary: 0 8px 24px 0 rgba(133, 134, 153, 0.15);
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 var(--pulse-ring-color, rgba(1, 121, 219, 0.45));
+  }
+
+  60% {
+    /* Peak expansion with soft fadeout */
+    box-shadow: 0 0 0 10px rgba(1, 121, 219, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(1, 121, 219, 0);
+  }
+}
+
+.animate-pulse-ring {
+  animation: pulse-ring 2s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+/* Premium sliding shimmer animation for high-fidelity skeleton states */
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.25) 20%,
+      rgba(255, 255, 255, 0.55) 60%,
+      rgba(255, 255, 255, 0) 100%);
+  animation: shimmer 1.8s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  content: "";
+}
+
+.bg-radial-glow-orange {
+  background-image: radial-gradient(circle at top left, rgba(255, 95, 2, 0.18), transparent 55%);
+}
+
+.bg-radial-glow-blue {
+  background-image: radial-gradient(circle at bottom right, rgba(0, 105, 166, 0.22), transparent 55%);
+}

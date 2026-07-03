@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# @sebastian_sultz/ui
 
-## Getting Started
+A modern, highly-polished React UI component library built with TypeScript, Tailwind CSS v4, and Radix UI.
 
-First, run the development server:
+## Installation
+
+Install the library and its peer dependencies:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install @sebastian_sultz/ui
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Make sure you have React and React DOM (v18+) installed in your project.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Usage
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 1. Import the Styles
 
-## Learn More
+You must import the compiled Tailwind CSS styles once at the entry point of your application (e.g., `src/main.tsx`, `src/index.tsx`, or `app/layout.tsx`):
 
-To learn more about Next.js, take a look at the following resources:
+```tsx
+import "@sebastian_sultz/ui/styles.css";
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 2. Import Components
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Now you can import and use any of the components in your React application:
 
-## Deploy on Vercel
+```tsx
+import React from "react";
+import { Button } from "@sebastian_sultz/ui";
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+function App() {
+  return (
+    <div className="p-6">
+      <Button variant="contained" color="primary">
+        Click Me
+      </Button>
+    </div>
+  );
+}
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+export default App;
+```
+
+## Available Components
+
+This library exports a wide range of UI components, including:
+* **Buttons & Inputs**: `Button`, `Input`, `Checkbox`, `RadioGroup`, `Switch`, `Toggle`, `InputOTP`
+* **Feedback**: `Spinner`, `ProgressBar`, `Progress`, `Skeleton`, `Sonner` (Toaster)
+* **Data Display**: `Table`, `TableComponent`, `DealsCard`, `StatsBar`, `Calendar`, `CalendarCard`, `Chip`, `Badge`
+* **Navigation**: `Pagination`, `PaginationLinks`, `Breadcrumb`, `Tabs`, `Sidebar`
+* **Overlays**: `Dialog`, `Popover`, `Sheet`, `Tooltip`, `VerificationCodeModal`
+* **Utilities**: `ArrowLineSeparator`, `LineDivider`, `NoteBox`, `UnitCounter`, `DocumentUpload`
