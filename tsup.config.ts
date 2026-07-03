@@ -5,7 +5,7 @@ export default defineConfig({
   entry: ["src/index.ts"],
   format: ["cjs", "esm"],
   dts: true,
-  tsconfig: "tsconfig.json",
+  tsconfig: "tsconfig.lib.json",
   external: ["react", "react-dom"],
   splitting: false,
   sourcemap: true,
